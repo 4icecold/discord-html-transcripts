@@ -94,7 +94,11 @@ export default function ComponentRow({
       return <DiscordSeparator key={id} spacing={component.spacing} divider={component.divider} />;
 
     case ComponentType.TextDisplay:
-      return <MessageContent key={id} content={component.content} context={{ ...context, type: RenderType.NORMAL }} />;
+      return (
+        <div key={id} style={{ display: 'block', lineHeight: '1.375rem', wordWrap: 'break-word' }}>
+          <MessageContent content={component.content} context={{ ...context, type: RenderType.NORMAL }} />
+        </div>
+      );
 
     default:
       return null;

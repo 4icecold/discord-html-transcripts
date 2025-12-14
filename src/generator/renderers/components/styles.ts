@@ -28,6 +28,18 @@ export const ButtonStyleMapping = {
 } as const;
 
 export const globalStyles = `
+  /* Fix emoji inline display */
+  discord-custom-emoji {
+    display: inline !important;
+    vertical-align: middle;
+  }
+  
+  discord-custom-emoji img {
+    display: inline !important;
+    vertical-align: middle;
+    margin: 0 0.05em 0 0.1em;
+  }
+
   .discord-container {
     display: grid;
     gap: 4px;
