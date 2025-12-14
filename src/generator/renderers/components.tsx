@@ -42,12 +42,14 @@ export default function ComponentRow({
 
     case ComponentType.Container:
       return (
-        <DiscordContainer key={id}>
-          <>
-            {component.components.map((nestedComponent, id) => (
-              <ComponentRow component={nestedComponent} id={id} key={id} context={context} />
-            ))}
-          </>
+        <DiscordContainer
+          key={id}
+          accentColor={component.hexAccentColor}
+          spoiler={component.spoiler}
+        >
+          {component.components.map((nestedComponent, idx) => (
+            <ComponentRow component={nestedComponent} id={idx} key={idx} context={context} />
+          ))}
         </DiscordContainer>
       );
 
